@@ -5,14 +5,12 @@ int solution(int A[], int B[], int N) {
     
     //start with the 1st segment in set , so answer = 1
     int ans = 1;
-    int currentA = A[0];
     int currentB = B[0];
     
     for(int i=0; i<N; i++){
         if(A[i]<= currentB) continue; // if start of next segment < end of current segment means they are overlapping , skip such segments 
        
 	// found next non overlapping segment , increment answer and update current segment . time complexity O(N) , space O(1) 
-	currentA = A[i];
         currentB = B[i];
         ans++;
     }
